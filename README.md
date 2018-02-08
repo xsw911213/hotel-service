@@ -50,7 +50,7 @@ supervisor --harmony app
 ```
 当然你也可以用``node app.js``
 
-访问：http://127.0.0.1:3008/admin/
+访问：http://127.0.0.1:3010/admin/
 
 嗯，到现在项目算是跑起来了。
 
