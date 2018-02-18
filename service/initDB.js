@@ -18,20 +18,14 @@ let initUsers = function () {
 
   let users = [
     {
+      "userid": 1,
       "username": "master",
       "password": "zhang123456",
       "role": "master",
-      "name": "大宇哥",
-      "userid": 1,
-      "avatar": "https://raw.githubusercontent.com/taylorchen709/markdown-images/master/vueadmin/user.png"
-    },
-    {
-      "username": "admin",
-      "password": "123456",
-      "role": "admin",
-      "name": "管理员",
-      "userid": 2,
-      "avatar": "https://raw.githubusercontent.com/taylorchen709/markdown-images/master/vueadmin/user.png"
+      "name": "远宇诚科技",
+      "tel":'010-11122233',
+      "remark":''
+      // "avatar": "https://raw.githubusercontent.com/taylorchen709/markdown-images/master/vueadmin/user.png"
     }
   ]
   db.insert(dbPth, schemaOptions.user, collection, users);
@@ -53,42 +47,32 @@ let initMenu = function () {
           "children": [
             {
               "path": "/main",
-              "name": "主页"
+              "name": "首页（法律声明）"
             }
           ]
         },
         {
           "path": "/",
-          "name": "管理设置",
+          "leaf": true,
+          "name": "",
           "children": [
             {
-              "path": "/hotelSetting",
-              "name": "酒店设置"
-            },
-            {
-              "path": "/accountSetting",
-              "name": "账号设置"
+              "path": "/addHotel",
+              "name": "新增酒店商户"
             }
           ]
-        },
+        }, 
         {
           "path": "/",
-          "name": "广告投放",
+          "leaf": true,
+          "name": "",
           "children": [
             {
-              "path": "/beginAd",
-              "name": "开屏广告"
-            },
-            {
-              "path": "/topAd",
-              "name": "上滚动条"
-            },
-            {
-              "path": "/bottomAd",
-              "name": "下固定广告位"
+              "path": "/hotelList",
+              "name": "酒店商户列表"
             }
           ]
-        }
+        }, 
       ]
     },
     {
@@ -100,29 +84,44 @@ let initMenu = function () {
           "name": "",
           "children": [
             {
-              "path": "/mainAd",
-              "name": "主页"
+              "path": "/main",
+              "name": "首页（法律声明）"
             }
           ]
         },
         {
-          "path": "/ad",
-          "name": "广告投放",
+          "path": "/basicInfo",
+          "name": "基本信息",
           "children": [
             {
-              "path": "/beginAd",
-              "name": "开屏广告"
+              "path": "/pageInfoConfig",
+              "name": "页面信息设置"
             },
             {
-              "path": "/topAd",
-              "name": "上滚动条"
+              "path": "/commoditySetting",
+              "name": "商品设置"
             },
             {
-              "path": "/bottomAd",
-              "name": "下固定广告位"
+              "path": "/roomList",
+              "name": "房间列表"
+            },
+            {
+              "path": "/printerSetting",
+              "name": "打印机设置"
             }
           ]
-        }
+        },
+        {
+          "path": "/",
+          "leaf": true,
+          "name": "",
+          "children": [
+            {
+              "path": "/currentOrder",
+              "name": "实时订单"
+            }
+          ]
+        },
       ]
     }
   ]

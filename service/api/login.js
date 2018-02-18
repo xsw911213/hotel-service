@@ -9,14 +9,14 @@ function gerUserInfo(userinfoRromClient,res){
 
   let condidtion = { username: userinfoRromClient.username };
   
-  let fields = {
-     _id: false,
+  let fields ={
+    _id: true,
     username: true,
     password: true,
     role: true,
     name: true,
-    userid: true,
-    avatar: true
+    tel:true,
+    remark:true
   }
 
   let resData = {}
@@ -36,11 +36,10 @@ function gerUserInfo(userinfoRromClient,res){
         status : "success",
         path : "/main",
         userinfo : {
-          avatar : userinfoRromDB.avatar,
-          userid : userinfoRromDB.userid,
+          userid : userinfoRromDB._id,
           name : userinfoRromDB.name,
-          username : userinfoRromDB.username,
-          password: userinfoRromDB.password,
+          // username : userinfoRromDB.username,
+          // password: userinfoRromDB.password,
           role : userinfoRromDB.role
         }
       }

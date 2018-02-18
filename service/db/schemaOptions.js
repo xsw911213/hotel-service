@@ -4,8 +4,8 @@ let user = {
   password: {type: String},
   role: {type: String},
   name: {type: String},
-  userid: {type: Number},
-  avatar: {type: String}
+  tel: {type: String},
+  remark: {type: String}
 }
 
 // menu集合  数据模型
@@ -14,40 +14,43 @@ let menu = {
   menu: {type: Array, default: []}
 }
 
-// hotel集合  数据模型
-let hotel = {
-  // id: {type: Number},
-  name: {type: String},
-  contact: {type: String},
-  phone: {type: String},
-  time : { type:Date, default: Date.now }
-  // delete: {type: Boolean, default: false}
+// baseInfo集合  数据模型
+let baseInfo = {
+  userid: {type: String},
+  pageInfo: {type: Object,default: {
+      tel:'',
+      delivery: false,
+      startTime: '',
+      endTime:'',
+      marked:'您的订单我们已经收到，费用将在您退房时一并结算。'
+    }
+  },
+  roomList: {type: Array, default: []},
+  printers: {type: Array, default: []},
+  commodityList: {type: Array, default: []},
 }
 
-// beginAd 集合数据模型
-let beginAd = {
-  date:{type: String},
-  time:{type: String},
-  adimg:{type: String},
-  link:{type: String, default: null},
+// order集合  数据模型
+let order = {
+  userid: {type: String},
+  deal: {type:Boolean, default:false},
+  room: {type: String},
+  orderNum: {type: String},
+  orderContent: {type: Object, default: {}},
 }
 
-// topAd 集合数据模型
-let topAd = {
-  date:{type: String},
-  time:{type: String},
-  adimg:{type: Array, default: []},
-  link:{type: Array, default: []},
-}
-
-
+//commodity集合  数据模型
+// let commodity = {
+//   userid: {type: String},
+//   commodityList: {type: Array, default: []},
+// }
 
 let schemaOption = {
   user,
   menu,
-  hotel,
-  beginAd,
-  topAd
+  baseInfo,
+  order,
+  // commodity
 }
 
 module.exports = schemaOption;
