@@ -6,16 +6,20 @@ let request = require('request');
 
 function printOrder(printers,content,orderNum,room){
   let mainContent = '^H2远宇诚科技为您服务\n';
-      mainContent+= `房间号：${room}\n`;
-      mainContent+= `订单编号：${orderNum}\n`;
-      mainContent+= '订单内容：\n';
-      mainContent+= '--------------------------------\n';
+  mainContent+= `房间号：${room}\n`;
+  mainContent+= `订单编号：${orderNum}\n`;
+  mainContent+= '\n';
+  mainContent+= '订单内容：\n';
+  mainContent+= '--------------------------------\n';
+
+  let allNum = 0;
   content.list.forEach((item,index)=>{
-    console.log(item);
-    mainContent += `${item.name}    ${item.num} * ${item.price}元 \n`;
+    // console.log(item);
+    allNum += (item.num - 0);
+    mainContent += `${item.name}  ${item.num}${item.unit}  ${item.price}元 \n`;
   })
   mainContent += '--------------------------------\n';
-  mainContent += `^H2合计：${content.totalPrice}元\n`;
+  mainContent += `^H2合计：共 ${allNum} 件商品  ${content.totalPrice} 元\n`;
   mainContent += `^H2备注：${content.remark}\n`;
   mainContent += `^H2下单时间：${orderNum.substring(0,4)}-${orderNum.substring(4,6)}-${orderNum.substring(6,8)} ${orderNum.substring(8,10)}:${orderNum.substring(10,12)}`
 
