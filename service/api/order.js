@@ -4,8 +4,9 @@ let schemaOptions = require("../db/schemaOptions");
 
 let request = require('request');
 
-function printOrder(printers,content,orderNum){
+function printOrder(printers,content,orderNum,room){
   let mainContent = '^H2远宇诚科技为您服务\n';
+      mainContent+= `房间号：${room}\n`;
       mainContent+= `订单编号：${orderNum}\n`;
       mainContent+= '订单内容：\n';
       mainContent+= '--------------------------------\n';
@@ -51,7 +52,7 @@ function addOrder(userinfoRromClient, res){
   function insertSucc(result){
     console.log(result);
     res.json({type:'success',text:'下单成功'});
-    printOrder(userinfoRromClient.printers,userinfoRromClient.orderContent,userinfoRromClient.orderNum)
+    printOrder(userinfoRromClient.printers,userinfoRromClient.orderContent,userinfoRromClient.orderNum,userinfoRromClient.room)
   }
   function error(result){
     console.log(result);
