@@ -34,7 +34,6 @@ function getBaseInfo(userinfoRromClient,res){
 }
 
 function putBaseInfo(userinfoRromClient,res){
-  console.log(userinfoRromClient)
 
   let collection = 'baseinfos';
 
