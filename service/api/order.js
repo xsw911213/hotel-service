@@ -25,10 +25,11 @@ function printOrder(printers,content,orderNum,room){
   printers.forEach((item,index) => {
     let head = '';
     let foot = '\n';
-        foot+= '技术支持：\n';
-        foot+= '河北远宇诚科技有限公司\n';
-        foot+= '联系电话：\n';
-        foot+= '13899991111 13311112222';
+        // foot+= '技术支持：\n';
+        // foot+= '河北远宇诚科技有限公司\n';
+        // foot+= '联系电话：\n';
+        // foot+= '13899991111 13311112222';
+        foot+= '感谢您的使用和支持！\n';
     // 365
     if(item.brand === '365'){
       let deviceNo = item.deviceNo;
